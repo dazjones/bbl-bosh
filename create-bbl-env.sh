@@ -1,4 +1,4 @@
-GCP_PROJECT=$(gcloud config get-value project 2>/dev/null)
+GCP_PROJECT=${GCP_PROJECT}
 BBL_ENVIRONMENT=bbl-${GCP_PROJECT}
 BASE_PATH=$(pwd)
 BBL_STATE_PATH=${BASE_PATH}/${BBL_ENVIRONMENT}

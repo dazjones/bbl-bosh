@@ -18,9 +18,6 @@ export BBL_GCP_SERVICE_ACCOUNT_KEY=$(cat ${SERVICE_ACCOUNT_KEY_FILE})
 
 bbl plan -s ${BBL_STATE_PATH} $*
 
-# Add nat instance tf file into bbl template
-cat overrides/nat-tf-template.override >> ${BBL_STATE_PATH}/terraform/template.tf
-
 # Remove director external IP and set director tags
 ENV_ID=$(grep env_id "${BBL_STATE_PATH}/vars/terraform.tfvars" | sed 's/^env_id="\(.*\)"$/\1/g')
 sed -i "s/^.*bosh-director-ephemeral-ip-ops.*$/  -v  tags=[${ENV_ID}-bosh-director,no-ip]/g" "${BBL_STATE_PATH}/create-director.sh"

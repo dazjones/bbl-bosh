@@ -16,4 +16,3 @@ then
 else
     bbl destroy -s ${BBL_STATE_PATH} $*
 fi
-B

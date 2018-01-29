@@ -18,4 +18,5 @@ fi
 
 export BBL_GCP_SERVICE_ACCOUNT_KEY=$(cat ${SERVICE_ACCOUNT_KEY_FILE})
 
+bbl plan -s ${BBL_STATE_PATH} $*
 bbl up -s ${BBL_STATE_PATH} $*

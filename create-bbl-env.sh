@@ -9,6 +9,8 @@ export BBL_IAAS=gcp
 export BBL_ENV_NAME=${BBL_ENVIRONMENT}
 export BBL_GCP_REGION=${GCP_REGION}
 
+rm -fr ${BBL_STATE_PATH}
+
 if [ ! -d ${BBL_STATE_PATH} ]
 then
     mkdir -p ${BBL_STATE_PATH}
